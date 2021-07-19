@@ -16,22 +16,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.currentTimeStampButton.setOnClickListener {
-            binding.currentTimeStampButton.setLoading()
-            lifecycleScope.launch {
-                delay(3000)
-                val currentTime = System.currentTimeMillis()
-                binding.currentTimeStampTextView.text = currentTime.getTimeStamp()
-                binding.currentTimeStampButton.setNormal()
-            }
+        binding.mainCurrentTimeStampButton.setOnClickListener {
+            setupViews()
         }
+    }
 
-        binding.yearMonthDayButton.setOnClickListener {
-            //Todo
-        }
-
-        binding.dateUnixTimeButton.setOnClickListener {
-            //Todo
+    private fun setupViews() {
+        binding.mainCurrentTimeStampButton.setLoading()
+        lifecycleScope.launch {
+            delay(3000)
+            val currentTime = System.currentTimeMillis()
+            binding.currentTimeStampTextView.text = currentTime.getTimeStamp()
+            binding.yearMonthDayTextView.text = currentTime.getYearMonthDay()
+            binding.dateUnixTimeTextView.text = currentTime.getYearMonthDay().getDateUnixTime().toString()
+            binding.mainCurrentTimeStampButton.setNormal()
         }
     }
 }

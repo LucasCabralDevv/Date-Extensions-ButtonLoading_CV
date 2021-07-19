@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Date Extensions</string>
-    <string name="loading_button_tsc">Please wait…</string>
-    <string name="timestamp_normal_text">Current Time</string>
-    <string name="year_m_d_normal_text">Year Month Day</string>
-    <string name="date_u_t_normal_text">Date Unix Time</string>
+    <string name="loading_text_button">Please wait…</string>
+    <string name="normal_text_button">Current Time</string>
+    <string name="complete_date_text">Complete: </string>
+    <string name="year_month_day_text">Year Month Day: </string>
+    <string name="date_unix_time_text">Date Unix Time: </string>
 </resources>

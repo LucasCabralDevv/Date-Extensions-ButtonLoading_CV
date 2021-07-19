@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
+    android:layout_height="match_parent"
     android:padding="32dp"
     tools:context=".MainActivity">
 
@@ -21,65 +20,75 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/currentTimeStampTextView"
+        android:id="@+id/mainCompleteCurrentTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:text="@string/timestamp_normal_text"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="@string/complete_date_text"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainAppNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/mainAppNameTextView" />
 
-    <com.lucascabral.dateextensions.ProgressButton
-        android:id="@+id/currentTimeStampButton"
+    <TextView
+        android:id="@+id/currentTimeStampTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainCompleteCurrentTime"
+        app:layout_constraintTop_toTopOf="@+id/mainCompleteCurrentTime" />
+
+    <TextView
+        android:id="@+id/mainYearMonthDayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/year_month_day_text"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/currentTimeStampTextView"
-        app:progress_button_loading_title="@string/loading_button_tsc"
-        app:progress_button_title="@string/timestamp_normal_text" />
+        app:layout_constraintTop_toBottomOf="@+id/mainCompleteCurrentTime" />
 
     <TextView
         android:id="@+id/yearMonthDayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:text="@string/year_m_d_normal_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/currentTimeStampButton" />
-
-    <com.lucascabral.dateextensions.ProgressButton
-        android:id="@+id/yearMonthDayButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainYearMonthDayTextView"
+        app:layout_constraintTop_toTopOf="@+id/mainYearMonthDayTextView" />
+
+    <TextView
+        android:id="@+id/mainDateUnixTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/date_unix_time_text"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/yearMonthDayTextView"
-        app:progress_button_loading_title="@string/loading_button_tsc"
-        app:progress_button_title="@string/year_m_d_normal_text" />
+        app:layout_constraintTop_toBottomOf="@+id/mainYearMonthDayTextView" />
 
     <TextView
         android:id="@+id/dateUnixTimeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:text="@string/date_u_t_normal_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/yearMonthDayButton" />
-
-    <com.lucascabral.dateextensions.ProgressButton
-        android:id="@+id/dateUnixTimeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainDateUnixTimeTextView"
+        app:layout_constraintTop_toTopOf="@+id/mainDateUnixTimeTextView" />
+
+    <com.lucascabral.dateextensions.ProgressButton
+        android:id="@+id/mainCurrentTimeStampButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateUnixTimeTextView"
-        app:progress_button_loading_title="@string/loading_button_tsc"
-        app:progress_button_title="@string/date_u_t_normal_text" />
+        app:layout_constraintTop_toBottomOf="@+id/mainDateUnixTimeTextView"
+        app:progress_button_loading_title="@string/loading_text_button"
+        app:progress_button_title="@string/normal_text_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
