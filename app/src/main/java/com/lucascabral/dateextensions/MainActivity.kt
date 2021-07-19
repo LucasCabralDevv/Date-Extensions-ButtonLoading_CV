@@ -20,9 +20,18 @@ class MainActivity : AppCompatActivity() {
             binding.currentTimeStampButton.setLoading()
             lifecycleScope.launch {
                 delay(3000)
-                binding.currentTimeStampTextView.text = "time Stamp"
+                val currentTime = System.currentTimeMillis()
+                binding.currentTimeStampTextView.text = currentTime.getTimeStamp()
                 binding.currentTimeStampButton.setNormal()
             }
+        }
+
+        binding.yearMonthDayButton.setOnClickListener {
+            //Todo
+        }
+
+        binding.dateUnixTimeButton.setOnClickListener {
+            //Todo
         }
     }
 }
